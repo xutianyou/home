@@ -6,3 +6,9 @@ git remote -v
 
 删除远程仓库
 git remote rm origin
+
+添加所有文件
+git add .
+
+提交所有文件
+git commit -m '备注1'
