@@ -14,6 +14,9 @@ git add .
 提交所有文件
 git commit -m '备注1'
 
+推送文件
+git push
+
 查看所有分支
 git branch -a
 
