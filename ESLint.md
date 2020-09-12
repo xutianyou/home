@@ -189,9 +189,51 @@
   //     "@vue/standard"
   //   ],
   //   "rules": {
-  //     "indent": [2, 4],
-  //     "no-tabs": "off",
-  //     "no-mixed-spaces-and-tabs": [2, false]
+      "no-trailing-spaces": 0,//一行结束后面不要有空格
+      "no-spaced-func": 2,//函数调用时 函数名与()之间不能有空格
+      "no-const-assign": 2,//禁止修改const声明的变量
+      "no-constant-condition": 2,//禁止在条件中使用常量表达式 if(true) if(1)
+      "no-debugger": 2,//禁止使用debugger
+      "no-delete-var": 2,//不能对var声明的变量使用delete操作符
+      "no-dupe-keys": 2,//在创建对象字面量时不允许键重复 {a:1,a:1}
+      "no-dupe-args": 2,//函数参数不能重复
+      "no-duplicate-case": 2,//switch中的case标签不能重复
+      "no-else-return": 2,//如果if语句里面有return,后面不能跟else语句
+      "no-empty": 2,//块语句中的内容不能为空
+      "no-eq-null": 2,//禁止对null使用==或!=运算符
+      "no-extra-bind": 2,//禁止不必要的函数绑定
+      "no-extend-native": 2,//禁止扩展native对象
+      "no-extra-boolean-cast": 2,//禁止不必要的bool转换
+      "no-extra-parens": 2,//禁止非必要的括号
+      "no-extra-semi": 2,//禁止多余的冒号
+      "no-func-assign": 2,//禁止重复的函数声明
+      "no-implicit-coercion": 1,//禁止隐式转换
+      "no-invalid-regexp": 2,//禁止无效的正则表达式
+      "no-invalid-this": 2,//禁止无效的this，只能用在构造器，类，对象字面量
+      "no-irregular-whitespace": 2,//不能有不规则的空格
+      "no-lonely-if": 2,//禁止else语句内只有if语句
+      "no-mixed-requires": [0, false],//声明时不能混用声明类型
+      "no-multi-spaces": 1,//不能用多余的空格
+      "no-multi-str": 2,//字符串不能用\换行
+      "no-multiple-empty-lines": [1, {"max": 2}],//空行最多不能超过2行
+      "no-shadow": 2,//外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+      "no-shadow-restricted-names": 2,//严格模式中规定的限制标识符不能作为声明时的变量名使用
+      "no-spaced-func": 2,//函数调用时 函数名与()之间不能有空格
+      "no-undef-init": 2,//变量初始化时不能直接给它赋值为undefined
+      "no-unneeded-ternary": 2,//禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
+      "no-unreachable": 2,//不能有无法执行的代码
+      "no-unused-expressions": 2,//禁止无用的表达式
+      "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
+      "no-use-before-define": 2,//未定义前不能使用
+      "no-useless-call": 2,//禁止不必要的call和apply
+      "no-var": 0,//禁用var，用let和const代替
+      "camelcase": 2,//强制驼峰法命名
+      "comma-dangle": [2, "never"],//对象字面量项尾不能有逗号
+      "curly": [2, "all"],//必须使用 if(){} 中的{}
+      "default-case": 2,//switch语句最后必须有default
+      "eqeqeq": 2,//必须使用全等
+      "indent": [2, 4],//缩进风格
+      "use-isnan": 2//禁止比较时使用NaN，只能用isNaN()
   //   },
   //   "parserOptions": {
   //     "parser": "babel-eslint"

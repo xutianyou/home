@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+// 三种状态pendding resolved rejected
+
+
+// const promise = new Promise((resolve, reject) => {
+//   console.log(1)
+//   resolve()
+//   console.log(2)
+// })
+// promise.then(() => {
+//   console.log(3)
+// })
+// console.log(4) // 1-2-4-3
+
+
+
+// const promise1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log('heihei')
+//     resolve('success')
+//   }, 1000)
+// })
+// const promise2 = promise1.then(() => {
+//   // throw new Error('error!!!')
+//   console.log('haha')
+// })
+ 
+// console.log('promise1', promise1)
+// console.log('promise2', promise2)
+ 
+// setTimeout(() => {
+//   console.log('promise1', promise1)
+//   console.log('promise2', promise2)
+// }, 5000)
+
+
+
+// let fn = new Promise(function (resolve, reject) {
+//   let num = 20
+//   if (num > 5) {
+//     resolve(num)
+//   } else {
+//     reject(num)
+//   }
+// })
+// // 第一次回调
+// fn.then((res)=>{
+//   console.log('1:',res)
+//   return new Promise((resolve,reject)=>{
+//     if(res>15){
+//       resolve('第二次参数成功')
+//     }else{
+//       reject('第二次参数失败')
+//     }
+//   })
+// },(err)=>{
+//   console.log('2:',err)
+// }).then((res)=>{ // 第二次回调
+//   console.log('3:',res)
+//   return new Promise((resolve,reject)=>{
+//     if(res === '第二次参数成功'){
+//       resolve('第三次参数成功')
+//     }else{
+//       reject('第三次参数失败')
+//     }
+//   })
+// },(err)=>{
+//   console.log('4:',err)
+// }).then((res) => {
+//   console.log('5:',res)
+// },(err) => {
+//   console.log('6:',err)
+// })
+
+
+
+// Promise.resolve(1)
+//   .then((res) => {
+//     console.log('haha', res)
+//     return 2
+//   })
+//   .catch((err) => {
+//     return 3
+//   })
+//   .then((res) => {
+//     console.log('heihei', res)
+//   })
+
+
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log('once')
+//     resolve('success')
+//   }, 1000)
+// })
+ 
+// const start = Date.now()
+// promise.then((res) => {
+//   console.log(res, Date.now() - start)
+// })
+// promise.then((res) => {
+//   console.log(res, Date.now() - start)
+// })
+
+// Promise.resolve(3).then(res => {
+//   console.log(res)
+// })
+
+// Promise.reject(4).catch(res => {
+//   console.log(res)
+// })
+
+
+
+
+// Promise.resolve(10)
+//   .then(res => {
+//     console.log('haha', res)
+//     return 20
+//   })
+//   .then(res => {
+//     console.log('haha2', res)
+//     return 30
+//   })
+//   .then(res => {
+//     console.log('haha3', res)
+//   })
+
+
+
+// process.nextTick(() => {
+//   console.log('nextTick')
+// })
+// Promise.resolve()
+//   .then(() => {
+//     console.log('then')
+//   })
+// setImmediate(() => {
+//   console.log('setImmediate')
+// })
+// console.log('end')
+
+
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log(1)
+    resolve(10)
+  }, 3000)
+})
+
+let promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log(2)
+    resolve(20)
+  }, 2000)
+})
+
+Promise.all([promise, promise2]).then((res) => {
+  console.log('res-all', res) // [10, 20]
+})
+
+Promise.race([promise, promise2]).then((res) => {
+  console.log('res-race', res) // 10
+})
+
+
+
+</script>
+</body>
+</html>

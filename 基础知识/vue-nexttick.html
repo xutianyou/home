@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nexttick</title>
+</head>
+<body>
+<!-- 
+应用场景
+需要在视图更新之后，基于新的视图进行操作
+
+文档说明
+在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM
+
+nextTick原理
+1、异步说明
+Vue 实现响应式并不是数据发生变化之后 DOM 立即变化，而是按一定的策略进行 DOM 的更新
+2、事件循环说明
+简单来说，Vue 在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。
+
+showsou(){
+  this.showit = true
+  this.$nextTick(function () {
+    // DOM 更新了
+    document.getElementById("keywords").focus()
+  })
+}
+
+getMyWidth() {
+    this.showMe = true;
+    //this.message = this.$refs.myWidth.offsetWidth;
+    //报错 TypeError: this.$refs.myWidth is undefined
+    this.$nextTick(()=>{
+        //dom元素更新后执行，此时能拿到p元素的属性
+        this.message = this.$refs.myWidth.offsetWidth;
+  })
+}
+ -->
+</body>
+</html>

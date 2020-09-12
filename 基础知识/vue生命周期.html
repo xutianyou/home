@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue生命周期</title>
+</head>
+<body>
+<!-- 
+分为8个阶段
+
+创建前/后，载入前/后，更新前/后，销毁前/后。
+
+ -->
+
+<!-- 
+	创建/前后：在beforeCreated(可掠特)阶段，vue实例的挂载元素el还没有。
+
+		在beforeCreated阶段可以添加loading事件，
+		在created阶段发起后端请求，拿回数据
+
+-->
+
+<!-- 
+ 	载入前/后：在beforeMount（帽特）阶段
+ 	vue实例的$el和data都初始化，但是挂载之前为虚拟的dom节点，data.message还未替换，页面无重新渲染。
+ 	在mounted（帽特的）阶段，vue实例挂载完成，data.message成功渲染。
+
+
+-->
+
+<!--  
+	更新前/后：当data变化时，会触发beforeUpdate和updated方法。
+-->
+
+<!-- 
+	销毁前/后：在执行destroy(底斯桌伊)方法后，
+	对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，
+	但是dom结构依然存在
+	beforeDestroy
+ -->
+</body>
+</html>
