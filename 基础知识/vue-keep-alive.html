@@ -12,6 +12,8 @@
 	它提供了include(因库鲁的)与exclude(一丝库鲁的)两个属性，允许组件有条件地进行缓存。
 
 	keep-alive提供了两个生命钩子，分别是activated(啊提喂)与deactivated(地啊提喂)。
+	因为keep-alive会将组件保存在内存中，并不会销毁以及重新创建，所以不会重新调用组件的created等方法，
+	需要用activated与deactivated这两个生命钩子来得知当前组件是否处于活动状态
  -->
 
  <!-- 
