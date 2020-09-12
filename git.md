@@ -21,4 +21,4 @@ git branch -a
 git checkout 分支名
 
 创建密匙
-ssh-keygen -t rsa -C "your_email@youremail.com"
+ssh-keygen -t rsa -C "94401785@qq.com"
