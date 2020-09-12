@@ -17,5 +17,8 @@ git commit -m '备注1'
 查看所有分支
 git branch -a
 
+切换分支
+git checkout 分支名
+
 创建密匙
 ssh-keygen -t rsa -C "your_email@youremail.com"
