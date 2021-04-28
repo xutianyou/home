@@ -23,6 +23,8 @@
     <div>94401785@qq.com</div>
     <div>love990220</div>
     <div>git@github.com:xutianyou/home.git</div>
+
+    <span class="iconfont icon-cangchucangku"></span>
   </div>
 </template>
 
@@ -31,3 +33,9 @@ export default {
   name: 'ElementTheme'
 }
 </script>
+
+<style lang="less" scoped>
+.iconfont {
+  color: var(--themeColor);
+}
+</style>

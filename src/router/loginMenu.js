@@ -3,11 +3,11 @@ const menu = [
 		label: '简历',
 		name: 'ProjectBrief',
 		path: '/project-brief',
-		icon: 'el-icon-platform-eleme'
+		icon: 'icon-resume'
 	},
 	{
 		label: '开发工具',
-		icon: 'el-icon-thumb',
+		icon: 'icon-tool',
 		children: [
 			{
 				label: 'API',
@@ -18,7 +18,7 @@ const menu = [
 	}, 
 	{
 		label: '项目文档',
-		icon: 'el-icon-document',
+		icon: 'icon-file',
 		children: [
 			{
 				label: '路由配置',
@@ -49,7 +49,7 @@ const menu = [
 	}, 
   {
 		label: '组件',
-		icon: 'el-icon-brush',
+		icon: 'icon-warehouse',
     children: [
       {
 				label: '复制xlsx表格数据',
@@ -60,7 +60,7 @@ const menu = [
   },
 	{
 		label: 'element',
-		icon: 'el-icon-brush',
+		icon: 'icon-word',
 		children: [
 			{
 				label: '下拉框',
@@ -81,7 +81,7 @@ const menu = [
 	}, 
 	{
 		label: 'echarts',
-		icon: 'el-icon-coffee-cup',
+		icon: 'icon-chart',
 		children: [
 			{
 				label: '柱状图',

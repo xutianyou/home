@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import './assets/css/theme/blue/blue.css'; // 蓝色主题
 import './assets/css/theme/violet/violet.css'; // 紫色主题
 // import 'element-ui/lib/theme-chalk/index.css' //默认主题
+import './assets/iconfont/iconfont.css'; // 紫色主题
 
 /*rem的适配插件*/
 import "amfe-flexible";

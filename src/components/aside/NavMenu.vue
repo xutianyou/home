@@ -1,10 +1,10 @@
 <template>
   <div class="nav-menu">
-    <el-scrollbar>
+    <el-scrollbar class="c-scrollbar">
         <el-tree :data="getMenu" :props="defaultProps" @node-click="handleNodeClick">
           <span class="custom-tree-node" slot-scope="{ node, data }">
-            <i :class="[data.icon]"></i>
-            <span @click="open(data, node)">{{ node.label }}</span>
+            <i  class="iconfont icon-hover" :class="[data.icon]"></i>
+            <span>{{ node.label }}</span>
           </span>
         </el-tree>
     </el-scrollbar>
@@ -42,25 +42,12 @@ export default {
       if (this.$router.history.current.path !== data.path && data.name) {
         this.$router.push({ name: data.name })
       }
-    },
-    open(data, node) {
-      if (data.path) {
-        console.log('open', data)
-        console.log('open.path', node)
-      }
     }
   }
 }
 </script>
 
-<style lang="less" scoped>
-  .el-scrollbar {
-      height: 100%;
-  }
-  ::v-deep .el-scrollbar__wrap {
-      overflow-x: hidden;
-  }
-</style>
+
 
 <style lang="less" scoped>
   .nav-menu {

@@ -1,2 +1,16 @@
 @import 'color.less';
 @import 'image.less';
+
+.icon-hover {
+  &:hover {
+    color: var(--themeColor);
+  }
+}
+
+
+.c-scrollbar {
+  height: 100%;
+}
+::v-deep .el-scrollbar__wrap {
+  overflow-x: hidden;
+}

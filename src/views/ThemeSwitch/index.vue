@@ -1,5 +1,5 @@
 <template>
-<el-scrollbar>
+<el-scrollbar class="c-scrollbar">
   <div class="file-css theme-switch">
     <el-card shadow="always">
       <div slot="header">
@@ -77,15 +77,6 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-  .el-scrollbar {
-      height: 100%;
-  }
-  ::v-deep .el-scrollbar__wrap {
-      overflow-x: hidden;
-  }
-</style>
 
 <style lang="less" scoped>
 @import "~@/assets/less/documents.less";
