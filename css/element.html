@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@1.4/lib/theme-default/index.css">
+</head>
+<body>
+  <div id="app">
+    <el-button @click="value = '选项5'">按钮</el-button>
+    <el-select v-model="value" placeholder="请选择" @visible-change="visibleChange" @change="change">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
+  </div>
+</body>
+  <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue@2.5/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui@1.4/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { 
+          visible: false,
+          options: [{
+            value: '选项1',
+            label: '黄金糕'
+          }, {
+            value: '选项2',
+            label: '双皮奶'
+          }, {
+            value: '选项3',
+            label: '蚵仔煎'
+          }, {
+            value: '选项4',
+            label: '龙须面'
+          }, {
+            value: '选项5',
+            label: '北京烤鸭'
+          }],
+          value: '',
+          valueOld: ''
+        }
+      },
+      methods: {
+        change(val) {
+
+        },
+        visibleChange(is) {
+          if (is) {
+            this.valueOld = this.value
+            console.log('valueOld', this.valueOld)
+          } else {
+            if (this.valueOld !== this.value) {
+              console.log('visibleChange', this.value)
+            }
+          }
+        }
+      }
+    })
+  </script>
+</html>

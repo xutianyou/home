@@ -99,3 +99,37 @@ service.interceptors.response.use(
 export default service
 ```
 directive文件夹--存放指令
+
+# 使用less 注意‘--save-dev’
+
+## npm i less-loader less --save-dev 
+## npm i style-resources-loader --save-dev 
+```
+const path = require('path')
+
+module.exports = {
+    chainWebpack: config => {
+      const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+      types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+    }
+    //  pluginOptions: {
+    //   'style-resources-loader': {
+    //    preProcessor: 'less',
+    //    patterns: [
+    //        path.resolve(__dirname, './src/css/bass.less')
+    //    ]
+    //   }
+    // }
+}
+function addStyleResource (rule) {
+    rule
+        .use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+            patterns: [
+                // 需要全局导入的less
+                path.resolve(__dirname, './src/css/base.less')
+            ]
+        })
+}
+```

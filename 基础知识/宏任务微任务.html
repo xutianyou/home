@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>宏任务微任务</title>
+</head>
+<body>
+<script type="text/javascript">
+// 主线程 script new Promise > this.$nextTick > Promise-then > process.nextTick > setTimeout
+this.$nextTick(function () {
+  console.log('nextTick-1');
+})
+process.nextTick(function() {
+ console.log('process-nextTick');
+})
+
+new Promise(function(resolve) {
+  console.log('Promise', '1');
+  resolve();
+}).then(function() {
+  console.log('Promise-then', '2')
+});
+
+setTimeout(function() {
+  console.log('setTimeout', '4')
+
+  new Promise(function(resolve) {
+    console.log('setTimeout-Promise', '5');
+    resolve();
+  }).then(function() {
+    console.log('setTimeout-Promise-then', '6')
+  });
+});
+
+setTimeout(function() {
+  console.log('setTimeout', '44')
+
+  new Promise(function(resolve) {
+    console.log('setTimeout-Promise', '55');
+    resolve();
+  }).then(function() {
+    console.log('setTimeout-Promise-then', '66')
+  });
+}, 1000);
+
+console.log('init', '1');
+
+new Promise( (resolve) => {
+  console.log('Promise', '2');
+
+  this.$nextTick(function () {
+    console.log('nextTick-2');
+  })
+
+  resolve();
+}).then(function() {
+  console.log('Promise-then', '3')
+});
+
+console.log('init', '2');
+
+this.$nextTick(function () {
+  console.log('nextTick-3');
+})
+</script>
+</body>
+</html>
