@@ -1,0 +1,8 @@
+.custom-blue  {
+	--themeColor:#4B8BEE; /*主题颜色*/
+	--backgroundTheme: #F9F9F9; /*主题背景颜色*/
+}
+.custom-violet  {
+	--themeColor:#d913F4;
+	--backgroundTheme: #F8F8F8; 
+}
