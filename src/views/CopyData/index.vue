@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import cDataEntry from '@/components/dataEntry';
+import cDataEntry from '@/components/DataEntry.vue';
 export default {
   name: 'copyData',
   components: { cDataEntry },

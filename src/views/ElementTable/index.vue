@@ -65,7 +65,7 @@
 
 <script>
 
-import TableFilter from '@/components/tableFilter'
+import TableFilter from '@/components/TableFilter.vue'
 export default {
   name: 'ElementTable',
   components: {

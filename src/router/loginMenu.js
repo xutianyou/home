@@ -89,6 +89,22 @@ const menu = [
 				path: '/echarts/bar'
 			}
 		]
+	}, 
+	{
+		label: '卡片',
+		icon: 'icon-shuzihua',
+		children: [
+			{
+				label: '卡片数据录入',
+				name: 'CardData',
+				path: '/card/data'
+			},
+			{
+				label: '创建卡片',
+				name: 'CardAdd',
+				path: '/card/add'
+			}
+		]
 	}
 ]
 export default menu

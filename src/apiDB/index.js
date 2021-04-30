@@ -1,9 +1,13 @@
 import login from './login/getLogin'
 import register from './login/getRegister'
+import tableData from './card/setTableData'
+import getList from './card/getList'
 
 const arr = {
 	login,
-	register
+	register,
+	tableData,
+	getList
 }
 
 function service (data) {
