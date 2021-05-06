@@ -59,7 +59,7 @@ export default {
 
     ::v-deep .el-tree {
       .el-tree-node__content {
-        height: 30px;
+        height: 40px;
       }
       .custom-tree-node {
         &>i {

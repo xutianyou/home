@@ -23,7 +23,7 @@
     <div class="login-box">
       <h1 class="login-box-title">登录</h1>
 
-      <el-form ref="ruleForm" :model="form" :rules="rules" label-width="55px">
+      <el-form ref="ruleForm" :model="form" :rules="rules">
         <el-form-item label="用户名" prop="name">
           <el-input v-model="form.name" name="userName" clearable></el-input>
         </el-form-item>
@@ -174,6 +174,18 @@ export default {
       margin-bottom: 20px; 
 			color: @textPrimary;
 		}
+  }
+}
+</style>
+<style lang="less" scoped>
+::v-deep .el-form {
+  .el-form-item {
+    .el-form-item__label {
+      width: 55px;
+    }
+    .el-form-item__content {
+      margin-left: 55px;
+    }
   }
 }
 </style>

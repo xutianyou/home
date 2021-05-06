@@ -176,3 +176,15 @@ export default {
   margin-top: 20px;
 }
 </style>
+<style lang="less" scoped>
+::v-deep .el-form {
+  .el-form-item {
+    .el-form-item__label {
+      width: 80px !important;
+    }
+    .el-form-item__content {
+      margin-left: 80px !important;
+    }
+  }
+}
+</style>
