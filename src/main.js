@@ -16,6 +16,8 @@ import './assets/iconfont/iconfont.css';
 import './utils/prototype';
 /*全局组件管理*/
 import './utils/globalComponent';
+/*全局指令管理*/
+import './utils/directive';
 /*rem的适配插件*/
 import "amfe-flexible";
 /*粒子背景*/

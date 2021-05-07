@@ -55,6 +55,11 @@ const menu = [
         label: '复制xlsx表格数据',
         name: 'CopyData',
         path: '/components/copy-data'
+      },
+      {
+        label: '拖拽指令',
+        name: 'DirectiveDrag',
+        path: '/components/directive-drag'
       }
     ]
   },
