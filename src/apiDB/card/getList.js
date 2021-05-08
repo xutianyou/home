@@ -28,7 +28,7 @@ async function service (userName) {
 	} else {
 		msg = '数据库连接失败';
 	}
-
+	DB.close(isOpen);
 	return new Promise((resolver, reject) => {
 		if (hasList) {
 			resolver({

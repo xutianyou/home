@@ -37,8 +37,10 @@
             label="修改人">
           </el-table-column>
           <el-table-column width="90" label="操作" fixed="right">
-            <el-button size="mini" type="primary" icon="el-icon-edit" circle></el-button>
-            <el-button size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+            <template slot-scope="scope">
+              <el-button size="mini" type="primary" icon="el-icon-edit" circle></el-button>
+              <el-button size="mini" type="danger" icon="el-icon-delete" circle @click="toDelete(scope)"></el-button>
+            </template>
           </el-table-column>
         </el-table>
       </el-row>
@@ -47,7 +49,7 @@
 </template>
 
 <script>
-import { getList } from '@/api/card.js';
+import { getList, deleteTableData } from '@/api/card.js';
 import cDataEntry from '@/components/DataEntry.vue';
 import { mapState } from 'vuex';
 export default {
@@ -80,6 +82,23 @@ export default {
     toGetData(data) {
       this.getDataList();
       this.addData = data;
+    },
+    toDelete(scope) {
+      console.log(scope)
+      console.log(scope.row.id)
+      deleteTableData({
+        userName: this.user.name,
+        id: scope.row.id
+      })
+      .then(res => {
+        if (res && res.code === '00') {
+          this.$message({
+            type: 'success',
+            message: '删除成功！'
+          });
+          this.getDataList();
+        }
+      })
     }
   }
 }

@@ -15,3 +15,10 @@ export function getList (data)  {
     data
   })
 }
+export function deleteTableData (data)  {
+  return request({
+    url: '/deleteTableData',
+    method: 'post',
+    data
+  })
+}

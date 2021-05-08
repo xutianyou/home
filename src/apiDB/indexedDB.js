@@ -76,8 +76,24 @@ const DB = {
       }
     })
   },
+  delData: async (request, storeName, key) => {
+    return await new Promise((resolver, reject) => {
+      const deleteData = request.result.transaction([storeName], 'readwrite')
+      .objectStore(storeName)
+      .delete(key);
+  
+      deleteData.onsuccess = () => {
+        resolver(true)
+      };
+  
+      deleteData.onerror = () => {
+        reject(false)
+      }
+    })
+  },
   close: (request) => {
     request.result.close();
+    console.log('数据库已关闭')
   }
 }
 
