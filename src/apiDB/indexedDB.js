@@ -93,7 +93,7 @@ const DB = {
   },
   close: (request) => {
     request.result.close();
-    console.log('数据库已关闭')
+    // console.log('数据库已关闭')
   }
 }
 

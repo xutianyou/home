@@ -21,12 +21,12 @@ import './utils/directive';
 /*rem的适配插件*/
 import "amfe-flexible";
 /*粒子背景*/
-import VueParticles from 'vue-particles';
+// import VueParticles from 'vue-particles';
 /*拖拽登录验证*/
 import SlideVerify from 'vue-monoplasty-slide-verify';
 /*echarts*/
 
-Vue.use(VueParticles)
+// Vue.use(VueParticles)
 Vue.use(SlideVerify);
 Vue.use(ElementUI);
 

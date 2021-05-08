@@ -1,6 +1,6 @@
 <template>
 	<div class="login">
-		<vue-particles
+		<!-- <vue-particles
       color="#fff"
       :particleOpacity="0.7"
       :particlesNumber="60"
@@ -18,7 +18,7 @@
       clickMode="push"
       class="lizi"
       style="height:100%"
-    ></vue-particles>
+    ></vue-particles> -->
 
     <div class="login-box">
       <h1 class="login-box-title">登录</h1>
