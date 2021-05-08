@@ -6,6 +6,7 @@
       </div>
       
       <cDataEntry @change="toGetData"></cDataEntry>
+
       <el-row class="row-table">
         <el-table 
           :data="tableData"
@@ -38,12 +39,16 @@
           </el-table-column>
           <el-table-column width="90" label="操作" fixed="right">
             <template slot-scope="scope">
-              <el-button size="mini" type="primary" icon="el-icon-edit" circle></el-button>
+              <el-button size="mini" type="primary" icon="el-icon-edit" circle @click="toEdit(scope)"></el-button>
               <el-button size="mini" type="danger" icon="el-icon-delete" circle @click="toDelete(scope)"></el-button>
             </template>
           </el-table-column>
         </el-table>
       </el-row>
+
+      <gl-dialog v-model="dialogTableVisible" title="修改报表数据">
+        <component-edit @close="close"></component-edit>
+      </gl-dialog>
     </el-card>
   </div>
 </template>
@@ -51,12 +56,14 @@
 <script>
 import { getList, deleteTableData } from '@/api/card.js';
 import cDataEntry from '@/components/DataEntry.vue';
+import componentEdit from './edit.vue';
 import { mapState } from 'vuex';
 export default {
   name: 'CardData',
-  components: { cDataEntry },
+  components: { cDataEntry, componentEdit },
   data() {
     return {
+      dialogTableVisible: false,
       addData: null,
       tableData: []
     }
@@ -84,8 +91,6 @@ export default {
       this.addData = data;
     },
     toDelete(scope) {
-      console.log(scope)
-      console.log(scope.row.id)
       deleteTableData({
         userName: this.user.name,
         id: scope.row.id
@@ -94,11 +99,18 @@ export default {
         if (res && res.code === '00') {
           this.$message({
             type: 'success',
-            message: '删除成功！'
+            message: res.msg
           });
           this.getDataList();
         }
       })
+    },
+    toEdit(scope) {
+      console.log(scope.row.id)
+      this.dialogTableVisible = true;
+    },
+    close() {
+      this.dialogTableVisible = false;
     }
   }
 }

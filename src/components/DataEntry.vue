@@ -1,13 +1,10 @@
 <template>
   <div class="c-data-entry">
-    <gl-button iconfont="lianjie" @click="dialogTableVisible = true">点击添加</gl-button>
+    <gl-button iconfont="lianjie" @click="visible = true">点击添加</gl-button>
     
-    <el-dialog title="请将xlsx的表格数据复制到输入框" 
-      width='90%' 
-      custom-class="all-dialog"
-      :close-on-click-modal="false"
-      :close-on-press-escape="false"
-      :visible.sync="dialogTableVisible">
+    <gl-dialog 
+      v-model="visible"
+      title="请将xlsx的表格数据复制到输入框">
 
       <el-row type="flex" justify="space-between">
         <el-col :span="6">
@@ -52,7 +49,7 @@
             :label="item.label" min-width="90"></el-table-column>
         </el-table>
       </el-row>
-    </el-dialog>
+    </gl-dialog>
   </div>
 </template>
 
@@ -64,7 +61,7 @@ export default {
   name: 'cDataEntry',
   data() {
     return {
-      dialogTableVisible: false,
+      visible: false,
       disabledBtn: false,
       loading: false,
       textarea: '',
@@ -76,7 +73,7 @@ export default {
     }
   },
   watch:{
-    dialogTableVisible: {
+    visible: {
       handler(Boo) {
         if (!Boo) {
           this.close();
@@ -159,7 +156,7 @@ export default {
           if (res && res.code === '00') {
             this.$message.success(res.msg);
             this.$emit('change', this.tableData);
-            this.dialogTableVisible = false;
+            this.visible = false;
           } else {
             this.$message.error(res.msg);
           }
@@ -197,17 +194,4 @@ export default {
     height:280px;
   }
 }
-</style>
-<style lang="less" scoped>
-::v-deep .all-dialog {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  height: calc(100% - 40px);
-
-  .el-dialog__body {
-    height: calc(100% - 60px);
-    padding: 0 10px;
-  }
-}
-
 </style>
