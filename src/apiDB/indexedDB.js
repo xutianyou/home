@@ -45,14 +45,24 @@ const DB = {
     })
   },
   getAllData: async (request, storeName) => {
+    // 兼容IE没有getAll方法
     return await new Promise((resolver, reject) => {
+      const arrList = []
       const allList = request.result.transaction([storeName], 'readonly')
       .objectStore(storeName)
-      .getAll();
+      .openCursor();
   
-      allList.onsuccess = () => {
-        // 获取UserInformationTable表的全部数据
-        resolver(allList.result)
+      allList.onsuccess = (event) => {
+        var cursor = event.target.result;
+        if(cursor) {
+          // cursor.value 包含正在被遍历的当前记录
+          // 这里你可以对 result 做些什么
+          arrList.push(cursor.value)
+          cursor.continue();
+        } else {
+          // 没有更多 results
+          resolver(arrList)
+        }
       }
 
       allList.onerror = () => {
@@ -61,6 +71,23 @@ const DB = {
       }
     })
   },
+  // getAllData: async (request, storeName) => {
+  //   return await new Promise((resolver, reject) => {
+  //     const allList = request.result.transaction([storeName], 'readonly')
+  //     .objectStore(storeName)
+  //     .getAll();
+  
+  //     allList.onsuccess = () => {
+  //       // 获取UserInformationTable表的全部数据
+  //       resolver(allList.result)
+  //     }
+
+  //     allList.onerror = () => {
+  //       // 获取UserInformationTable表的全部数据
+  //       reject(false)
+  //     }
+  //   })
+  // },
   setData: async (request, storeName, data) => {
     return await new Promise((resolver, reject) => {
       const addData = request.result.transaction([storeName], 'readwrite')
