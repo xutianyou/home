@@ -16,12 +16,13 @@ module.exports = {
       //     javascriptEnabled: true,
       //   },
       // },
-      postcss: {
-        plugins: [
-          // 设计稿宽度的1/10，一般为75
-          require('postcss-px2rem')({remUnit: 136.8}),
-        ]
-      }
+
+      // postcss: {
+      //   plugins: [
+      //     // 设计稿宽度的1/10，一般为75
+      //     require('postcss-px2rem')({remUnit: 136.8}),
+      //   ]
+      // } //amfe-flexible配置
     }
   }
 }

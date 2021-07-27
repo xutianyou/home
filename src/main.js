@@ -19,7 +19,7 @@ import './utils/globalComponent';
 /*全局指令管理*/
 import './utils/directive';
 /*rem的适配插件*/
-import "amfe-flexible";
+// import "amfe-flexible";
 /*粒子背景*/
 // import VueParticles from 'vue-particles';
 /*拖拽登录验证*/
