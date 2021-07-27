@@ -55,6 +55,7 @@ export default {
   },
   mounted() {
     let bodyDom = document.getElementsByTagName('body')[0].getAttribute("class");
+    
     if ( bodyDom.indexOf(this.themeViolet) > -1 ) {
       // 紫色主题
       this.theme = this.themeViolet;
