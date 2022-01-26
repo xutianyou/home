@@ -25,6 +25,7 @@ import './utils/directive';
 /*拖拽登录验证*/
 import SlideVerify from 'vue-monoplasty-slide-verify';
 /*echarts*/
+console.log('试试');
 
 // Vue.use(VueParticles)
 Vue.use(SlideVerify);
